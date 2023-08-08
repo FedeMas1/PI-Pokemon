@@ -1,58 +1,50 @@
-const { DataTypes } = require('sequelize');
-// Exportamos una funcion que define el modelo
-// Luego le injectamos la conexion a sequelize.
-module.exports = (sequelize) => {
-  // defino el modelo
-  sequelize.define('pokemon', {
-    id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
-      primaryKey: true
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+const {DataTypes} = require("sequelize")
 
-    hp: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+module.exports = (sequelize) =>{
+    sequelize.define(pokemon, {
+        id:{
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            allownull: false,
+            autoIncrement: true,
+            primaryKey: true,
 
-    attack: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    defense: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    speed:{
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    height: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    weight: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    image:{
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    dataBase:{
-      type: DataTypes.STRING,
-      defaultValue: true
-    } 
-  }, {timestamps: false});
-};
+        },
+        name:{
+            type: DataTypes.STRING,
+            allownull: false,
+        },
+        hp:{
+            type: DataTypes.STRING,
+            allownull: false,
+        },
+        attack:{
+            type: DataTypes.STRING,
+            allownull: false,
+        },
+        defense:{
+            type: DataTypes.STRING,
+            allownull: false,
+        },
+        speed:{
+            type: DataTypes.STRING,
+            allownull: false,
+        },
+        height:{
+            type: DataTypes.STRING,
+            allownull: false,
+        },
+        weight:{
+            type: DataTypes.STRING,
+            allownull: false,
+        },
+        image:{
+            type: DataTypes.STRING,
+            allownull: false,
+        },
+        createinDB:{
+            type:DataTypes.BOOLEAN,
+            defaultValue: true
+        }
+    },)
+}
